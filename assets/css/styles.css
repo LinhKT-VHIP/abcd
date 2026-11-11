@@ -1,0 +1,98 @@
+:root {
+  --primary: #1e3a8a;
+  --primary-hover: #172554;
+  --accent: #0284c7;
+  --bg-main: #f1f5f9;
+  --bg-card: #ffffff;
+  --border-color: #cbd5e1;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #b91c1c;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-family); background-color: var(--bg-main); color: var(--text-main); font-size: 14px; line-height: 1.5; }
+
+/* Header & Top Bar */
+.top-header { background: #0f172a; color: #fff; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); }
+.brand h1 { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+.brand span { font-size: 12px; color: #94a3b8; margin-left: 8px; text-transform: uppercase; }
+.header-actions { display: flex; gap: 12px; align-items: center; }
+.conn-badge { padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: #334155; }
+.conn-badge.connected { background: #166534; color: #dcfce7; }
+.conn-badge.disconnected { background: #991b1b; color: #fee2e2; }
+
+/* Nav Tabs */
+.nav-tabs { display: flex; background: #ffffff; border-bottom: 1px solid var(--border-color); padding: 0 24px; }
+.tab-btn { padding: 12px 20px; font-size: 14px; font-weight: 600; color: var(--text-muted); background: none; border: none; cursor: pointer; border-bottom: 3px solid transparent; }
+.tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+/* Main Container */
+.main-wrapper { max-width: 1360px; margin: 20px auto; padding: 0 16px; }
+.view-section { display: none; }
+.view-section.active { display: block; }
+
+/* Dashboard KPI cards */
+.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.kpi-card { background: var(--bg-card); padding: 18px; border-radius: 6px; border: 1px solid var(--border-color); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.kpi-label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+.kpi-value { font-size: 26px; font-weight: 700; color: var(--primary); margin-top: 6px; }
+
+/* Card Panels */
+.card-panel { background: var(--bg-card); border-radius: 6px; border: 1px solid var(--border-color); margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.card-header { padding: 14px 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: #fafafa; }
+.card-header h2 { font-size: 15px; font-weight: 700; }
+.card-body { padding: 20px; }
+
+/* Layout 2 cột form tạo */
+.create-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; }
+@media (max-width: 900px) { .create-grid { grid-template-columns: 1fr; } }
+
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.form-group label .req { color: var(--danger); margin-left: 2px; }
+.form-control { width: 100%; padding: 8px 12px; font-size: 14px; border: 1px solid var(--border-color); border-radius: 4px; background: #fff; }
+.form-control:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(2,132,199,0.15); }
+.form-control[readonly] { background: #f8fafc; color: #475569; font-weight: 600; }
+
+.status-box { padding: 14px; border-radius: 6px; margin-top: 14px; font-size: 13px; border: 1px solid transparent; }
+.status-box.duplicate { background: #fef2f2; border-color: #f87171; color: var(--danger); }
+.status-box.similar { background: #fffbeb; border-color: #fcd34d; color: var(--warning); }
+.status-box.unique { background: #f0fdf4; border-color: #86efac; color: var(--success); }
+
+/* Table styling */
+.table-responsive { width: 100%; overflow-x: auto; }
+.erp-table { width: 100%; border-collapse: collapse; text-align: left; }
+.erp-table th, .erp-table td { padding: 10px 14px; border-bottom: 1px solid var(--border-color); }
+.erp-table th { background: #f8fafc; font-size: 12px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+.erp-table tr:hover { background: #f1f5f9; cursor: pointer; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+.badge-roh { background: #e0f2fe; color: #0369a1; }
+.badge-hibe { background: #fef3c7; color: #92400e; }
+
+/* Buttons */
+.btn { padding: 8px 16px; font-size: 13px; font-weight: 600; border-radius: 4px; border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-primary:disabled { background: #94a3b8; cursor: not-allowed; }
+.btn-secondary { background: #fff; border-color: var(--border-color); color: var(--text-main); }
+.btn-secondary:hover { background: #f8fafc; }
+
+/* Modal */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 1000; }
+.modal-overlay.active { display: flex; }
+.modal-content { background: #fff; width: 560px; max-width: 95%; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+.modal-header { padding: 14px 20px; background: #0f172a; color: #fff; display: flex; justify-content: space-between; align-items: center; }
+.modal-body { padding: 20px; max-height: 75vh; overflow-y: auto; }
+.modal-footer { padding: 12px 20px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; gap: 10px; background: #fafafa; }
+
+/* Toast */
+.toast-container { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 2000; }
+.toast { padding: 12px 18px; border-radius: 4px; font-size: 13px; font-weight: 600; color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: slideIn 0.3s; }
+.toast.success { background: var(--success); }
+.toast.error { background: var(--danger); }
+.toast.info { background: var(--accent); }
+@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
